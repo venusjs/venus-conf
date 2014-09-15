@@ -9,4 +9,9 @@ describe('Argv', function () {
     v.assert.deepEqual(instance.getData(), { name: 'seth' });
   });
 
+  it('should return meta data', function () {
+    instance = new Argv();
+    v.assert.deepEqual(instance.getMeta(), { type: 'argv' });
+  });
+
 });
