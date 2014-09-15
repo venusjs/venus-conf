@@ -58,15 +58,6 @@ module.exports = function(grunt) {
         files : src,
         tasks : ['test:fast']
       }
-    },
-    release: {
-      options: {
-        github: { 
-          repo: 'venusjs/venus-conf', //put your user/repo here
-          usernameVar: 'GITHUB_USERNAME', //ENVIRONMENT VARIABLE that contains Github username 
-          passwordVar: 'GITHUB_PASSWORD' //ENVIRONMENT VARIABLE that contains Github password
-        }
-      }
     }
   });
 
