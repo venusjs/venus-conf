@@ -106,4 +106,10 @@ describe('Env', function () {
       v.assert.deepEqual(result, expectedResult);
     });
   });
+
+  describe('getMeta', function () {
+    it('should return meta data', function () {
+      v.assert.deepEqual(instance.getMeta(), { type: 'env' });
+    });
+  });
 });
