@@ -27,4 +27,36 @@ describe('util', function () {
       v.assert.equal(d, undefined);
     });
   });
+
+  describe('insert', function () {
+    it('should insert item at position 0', function () {
+      var list = util.insert([1, 2, 3, 4, 5], 'X', 0);
+
+      v.assert.deepEqual(list, ['X', 1, 2, 3, 4, 5]);
+    });
+
+    it('should insert item at end', function () {
+      var list = util.insert([1, 2, 3, 4, 5], 'X', 10);
+
+      v.assert.deepEqual(list, [1, 2, 3, 4, 5, 'X']);
+    });
+
+    it('should insert item at beginning', function () {
+      var list = util.insert([1, 2, 3, 4, 5], 'X', -2);
+
+      v.assert.deepEqual(list, ['X', 1, 2, 3, 4, 5]);
+    });
+
+    it('should insert item at beginning', function () {
+      var list = util.insert([], 'X', -2);
+
+      v.assert.deepEqual(list, ['X']);
+    });
+
+    it('should insert item at position 2', function () {
+      var list = util.insert([1, 2, 3, 4, 5], 'X', 2);
+
+      v.assert.deepEqual(list, [1, 2, 'X', 3, 4, 5]);
+    });
+  });
 });

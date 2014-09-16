@@ -16,6 +16,18 @@ describe('Conf', function () {
 
       v.assert.equal(instance.stores[0] instanceof Argv, true);
     });
+
+    it('should add the provider in the correct location', function () {
+      instance.addStore({
+        provider: 'argv'
+      });
+
+      instance.addStore({
+        provider: 'env'
+      }, 10);
+
+      v.assert.equal(instance.stores[0] instanceof Argv, true);
+    });
   });
 
   describe('lookupValue', function () {
